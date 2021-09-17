@@ -13,7 +13,10 @@ public class AddressBook {
     }
 
     public static void main(String[] args){
-        System.out.println("Address Book");
+        BuddyInfo buddy = new BuddyInfo("Barlos", "Canadian Tire Centre", "101");
+        AddressBook addressBook = new AddressBook();
+        addressBook.addBuddy(buddy);
+        addressBook.removeBuddy(buddy);
     }
 
 }
