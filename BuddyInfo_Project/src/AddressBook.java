@@ -4,19 +4,28 @@ import java.util.HashMap;
 public class AddressBook {
     private ArrayList<BuddyInfo> buddies;
 
+    public AddressBook(){
+        buddies = new ArrayList<BuddyInfo>();
+    }
+
     public void addBuddy(BuddyInfo buddy){
         buddies.add(buddy);
     }
 
-    public void removeBuddy(BuddyInfo buddy){
-        buddies.remove(buddy);
+    public BuddyInfo removeBuddy(int target){
+
+        if(target > -1 && target < buddies.size()){
+            return buddies.remove(target);
+        }
+        return null;
     }
 
     public static void main(String[] args){
+        System.out.println("Creating buddy: ");
         BuddyInfo buddy = new BuddyInfo("Barlos", "Canadian Tire Centre", "101");
         AddressBook addressBook = new AddressBook();
         addressBook.addBuddy(buddy);
-        addressBook.removeBuddy(buddy);
+        addressBook.removeBuddy(0);
     }
 
 }
