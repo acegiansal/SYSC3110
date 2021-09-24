@@ -21,6 +21,7 @@ public class AddressBook {
     }
 
     public static void main(String[] args){
+        //Creates buddyInfo object for testing
         System.out.println("Creating buddy: ");
         BuddyInfo buddy = new BuddyInfo("Barlos", "Canadian Tire Centre", "101");
         AddressBook addressBook = new AddressBook();
