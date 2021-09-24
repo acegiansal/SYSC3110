@@ -20,6 +20,10 @@ public class AddressBook {
         return null;
     }
 
+    public void testMethhod(){
+        System.out.println("Hello, testing");
+    }
+
     public static void main(String[] args){
         //Creates buddyInfo object for testing
         System.out.println("Creating buddy: ");
