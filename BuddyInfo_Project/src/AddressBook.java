@@ -1,27 +1,39 @@
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class AddressBook {
+public class AddressBook extends DefaultListModel {
     private ArrayList<BuddyInfo> buddies;
+    private int id;
+    private static int counter = 0;
 
     public AddressBook(){
         buddies = new ArrayList<BuddyInfo>();
+        id = counter;
+        counter++;
     }
 
     public void addBuddy(BuddyInfo buddy){
         buddies.add(buddy);
     }
 
-    public BuddyInfo removeBuddy(int target){
+    public boolean removeBuddy(int target){
 
         if(target > -1 && target < buddies.size()){
-            return buddies.remove(target);
+            buddies.remove(target);
+            return true;
         }
-        return null;
+        return false;
     }
 
-    public void testMethhod(){
-        System.out.println("Hello, testing");
+    public ArrayList<BuddyInfo> getBuddies() {
+        return buddies;
+    }
+
+    @Override
+    public String toString() {
+        return "AddressBook " + id +
+                ": Buddies:" + buddies;
     }
 
     public static void main(String[] args){

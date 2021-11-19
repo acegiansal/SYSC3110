@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class BuddyInfo {
 
     private String name;
@@ -26,6 +28,24 @@ public class BuddyInfo {
 
     public String getPhoneNumber() {
         return phoneNumber;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BuddyInfo buddyInfo = (BuddyInfo) o;
+        return name.equals(buddyInfo.name) && address.equals(buddyInfo.address) && phoneNumber.equals(buddyInfo.phoneNumber);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, address, phoneNumber);
+    }
+
+    @Override
+    public String toString() {
+        return "{" + name + ", " + phoneNumber + ", " + address + "}";
     }
 
     public static void main(String[] args) {
